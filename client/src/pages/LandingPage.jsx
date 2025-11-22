@@ -5,7 +5,9 @@ import AppHeader from "../components/AppHeader";
 const LandingPage = () => {
   useEffect(() => {
     // Wake up the server
-    fetch('https://fit-fam-server.onrender.com/exercises').catch(() => {});
+    // Wake up servers
+    fetch('https://fit-fam-server-1.onrender.com/exercises').catch(() => {});
+    fetch('https://fit-fam-z0nj.onrender.com/health').catch(() => {});
   }, []);
   return (
     <div className="relative w-full min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-display">

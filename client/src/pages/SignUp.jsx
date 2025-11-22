@@ -25,7 +25,9 @@ export default function SignUp() {
 
   useEffect(() => {
     // Wake up the server
-    fetch('https://fit-fam-server.onrender.com/exercises').catch(() => {});
+    // Wake up servers
+    fetch('https://fit-fam-server-1.onrender.com/exercises').catch(() => {});
+    fetch('https://fit-fam-z0nj.onrender.com/health').catch(() => {});
   }, []);
 
   const getPasswordRequirements = (password) => ({
@@ -39,7 +41,7 @@ export default function SignUp() {
     const username = email.split('@')[0];
     
     try {
-      const response = await fetch('https://group-fitness-app.onrender.com/users/register', {
+      const response = await fetch('https://fit-fam-z0nj.onrender.com/users/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',

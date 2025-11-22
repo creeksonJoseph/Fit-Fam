@@ -19,12 +19,14 @@ const Login = () => {
 
   useEffect(() => {
     // Wake up the server
-    fetch('https://fit-fam-server.onrender.com/exercises').catch(() => {});
+    // Wake up servers
+    fetch('https://fit-fam-server-1.onrender.com/exercises').catch(() => {});
+    fetch('https://fit-fam-z0nj.onrender.com/health').catch(() => {});
   }, []);
 
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
-      const response = await fetch('https://group-fitness-app.onrender.com/users/login', {
+      const response = await fetch('https://fit-fam-z0nj.onrender.com/users/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',

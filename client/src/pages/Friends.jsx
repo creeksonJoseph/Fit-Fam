@@ -11,7 +11,7 @@ const Friends = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const BASE_URL = "https://group-fitness-app.onrender.com";
+  const BASE_URL = "https://fit-fam-z0nj.onrender.com";
   const { user } = useAuth();
 
   useEffect(() => {
