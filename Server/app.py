@@ -16,7 +16,7 @@ from routes.Workout_session_routes import workout_session_bp
 def create_app():
     app = Flask(__name__)
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://neondb_owner:npg_P9IURFYvT5uG@ep-weathered-recipe-adiyrtye-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://neondb_owner:npg_BZMaSRI4PeC2@ep-super-sunset-a8ete8u5-pooler.eastus2.azure.neon.tech/FitFam?sslmode=require&channel_binding=require'
     
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SECRET_KEY'] = os.getenv("SECRET_KEY", "dev_secret")
@@ -24,14 +24,13 @@ def create_app():
     db.init_app(app)
     Migrate(app, db)
 
-    app.config["SESSION_TYPE"] = "sqlalchemy"
+    app.config["SESSION_TYPE"] = "filesystem"
     app.config['SESSION_PERMANENT'] = False
-    app.config['SESSION_USE_SIGNER'] = False
+    app.config['SESSION_USE_SIGNER'] = True
     app.config['SESSION_KEY_PREFIX'] = 'fitfam:'
     app.config['SESSION_COOKIE_SECURE'] = True
     app.config['SESSION_COOKIE_HTTPONLY'] = True
     app.config['SESSION_COOKIE_SAMESITE'] = 'None'
-    app.config["SESSION_SQLALCHEMY"] = db
     Session(app)
 
     CORS(app, 
