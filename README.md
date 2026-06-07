@@ -344,8 +344,7 @@ PUT    /progress/<id>         # Update progress entry
 
 ### 🔗 Links
 
-- **🌐 Live Application**: [https://fit-fam-eight.vercel.app/](https://fit-fam-eight.vercel.app/)
-- **📡 API Server**: [https://group-fitness-app.onrender.com](https://group-fitness-app.onrender.com)
+- **🌐 Live Application**: [https://fit-fam-1.vercel.app/](https://fit-fam-1.vercel.app/)
 - **📂 GitHub Repository**: [https://github.com/ogzacky75/Group_fitness_app](https://github.com/ogzacky75/Group_fitness_app)
 
 ### 🤝 Contributing
