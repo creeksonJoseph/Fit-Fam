@@ -114,7 +114,7 @@ const LandingPage = () => {
 
       <footer className="py-6 md:py-10">
         <div className="container mx-auto px-4 md:px-6 text-center text-subtle-light dark:text-subtle-dark">
-          <p className="text-sm">© 2025 FitFam. All rights reserved.</p>
+          <p className="text-sm">© {new Date().getFullYear()} FitFam. All rights reserved.</p>
         </div>
       </footer>
     </div>
