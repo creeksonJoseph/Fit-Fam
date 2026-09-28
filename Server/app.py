@@ -16,7 +16,13 @@ from routes.Workout_session_routes import workout_session_bp
 def create_app():
     app = Flask(__name__)
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://neondb_owner:npg_BZMaSRI4PeC2@ep-super-sunset-a8ete8u5-pooler.eastus2.azure.neon.tech/FitFam?sslmode=require&channel_binding=require'
+    db_url = os.getenv("DATABASE_URL")
+    if not db_url:
+        raise RuntimeError("DATABASE_URL environment variable is not set")
+    # Render sometimes provides postgres:// URIs; SQLAlchemy requires postgresql://
+    if db_url.startswith("postgres://"):
+        db_url = db_url.replace("postgres://", "postgresql://", 1)
+    app.config['SQLALCHEMY_DATABASE_URI'] = db_url
     
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SECRET_KEY'] = os.getenv("SECRET_KEY", "dev_secret")

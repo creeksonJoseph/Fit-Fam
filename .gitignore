@@ -7,3 +7,5 @@ flask_session/
 *.txt
 !requirements.txt
 squashfs-root/
+.env
+*.env
